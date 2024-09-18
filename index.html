@@ -6,12 +6,38 @@
     <title>PakTravels - Explore Pakistan Securely</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="logo-bg-free.png">
 
     <style>
         .hero-section {
             background: url('hero.jpg') center/cover no-repeat;
             color: white;
             padding: 100px 15px;
+            position: relative;
+        }
+
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(81, 80, 80, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            position: relative;
+            z-index: 2;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            font-size: 2.5rem; /* Adjust size as needed */
+        }
+
+        .search-form {
+            position: relative;
+            z-index: 2;
         }
 
         .search-form .form-control, .search-form .btn {
@@ -56,17 +82,45 @@
             color: white;
         }
 
+        @media (min-width: 992px) { /* Adjust depending on when your navbar expands */
+            .navbar .container-fluid {
+                display: flex;
+                justify-content: space-between; /* Ensures the logo and nav items are on opposite ends */
+            }
+            .navbar-nav .nav-item {
+                margin-left: 30px; /* Increase spacing between nav items */
+                margin-right: 30px; /* Symmetrical spacing for aesthetic balance */
+            }
+            .navbar-nav .nav-item:first-child {
+                margin-left: 0; /* Remove extra margin from the first item */
+            }
+            .navbar-nav .nav-item:last-child {
+                margin-right: 0; /* Remove extra margin from the last item */
+    }
+            #navbarNav {
+                display: flex;
+                justify-content: space-between; /* This will spread nav items and button apart */
+                align-items: center; /* Keeps items vertically aligned */
+                width: 100%; /* Ensures the navbar collapse takes full width */
+            }
+            .navbar-nav {
+                justify-content: center; /* Keeps nav items centered in the available space */
+            }
+        }
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand text-success" href="#">PakTravels</a>
+        <div class="container-fluid d-flex justify-content-between"> <!-- Flex container for proper alignment -->
+            <a class="navbar-brand text-success" href="#">
+                <img src="logo-bg-free.png" alt="logo" style="max-width: 40px;">
+                PakTravels</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto"> <!-- Centered nav items -->
                     <li class="nav-item">
                         <a class="nav-link" href="#">Destinations</a>
                     </li>
@@ -76,18 +130,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Services</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white" href="#">Book Now</a>
-                    </li>
                 </ul>
+                <div class="ms-auto"> <!-- Button far right -->
+                    <a class="nav-link btn btn-primary text-white"  style="padding: 8px;"  href="#">Book Now</a>
+                </div>
             </div>
         </div>
     </nav>
     
+    
+    
     <!-- Hero Section -->
     <section class="hero-section text-white text-center">
         <div class="container">
-            <h1 style="color: black; text-shadow: 2px 2px 8px rgba(196, 200, 204, 0.7);">Life's an adventure, Explore Pakistan with PakTravels!</h1>
+            <h1>Life's an adventure, Explore Pakistan with PakTravels!</h1>
             <form class="search-form mt-4 d-flex justify-content-center">
                 <input type="text" class="form-control mx-2" placeholder="Choose destination">
                 <input type="date" class="form-control mx-2">
@@ -130,20 +186,20 @@
                 <!-- Example of a travel package card -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="travel (1).jpg" class="card-img-top" alt="Swat Kalam">
+                        <img src="travel (4).jpg" class="card-img-top" alt="Swat Kalam">
                         <div class="card-body">
-                            <h5 class="card-title">3 Days Tour to Swat Kalam</h5>
-                            <p class="card-text">PKR 13,500 per head | Couples PKR 32,000</p>
+                            <h5 the card-title">2 Day Tour To Galiat</h5>
+                            <p class="card-text">PKR 5000 per head | Couples PKR 8000</p>
                             <a href="#" class="btn btn-primary w-100">Book Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="travel (2).jpg" class="card-img-top" alt="Swat Kalam">
+                        <img src="travel (1).jpg" class="card-img-top" alt="Swat Kalam">
                         <div class="card-body">
-                            <h5 the card-title">3 Days Tour to Swat Kalam</h5>
-                            <p class="card-text">PKR 13,500 per head | Couples PKR 32,000</p>
+                            <h5 class="card-title">3 Days Tour to Swat Kalam</h5>
+                            <p class="card-text">PKR 10,000 per head | Couples PKR 18,000</p>
                             <a href="#" class="btn btn-primary w-100">Book Now</a>
                         </div>
                     </div>
@@ -152,8 +208,8 @@
                     <div class="card">
                         <img src="travel (3).jpg" class="card-img-top" alt="Swat Kalam">
                         <div class="card-body">
-                            <h5 the card-title">3 Days Tour to Swat Kalam</h5>
-                            <p class="card-text">PKR 13,500 per head | Couples PKR 32,000</p>
+                            <h5 the card-title">5 Days Tour to Kashmir</h5>
+                            <p class="card-text">PKR 15,000 per head | Couples PKR 25,000</p>
                             <a href="#" class="btn btn-primary w-100">Book Now</a>
                         </div>
                     </div>
