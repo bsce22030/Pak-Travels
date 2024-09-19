@@ -66,10 +66,6 @@
             font-size: 18px;
         }
 
-        .featured-packages .card {
-            margin-bottom: 30px;
-        }
-
         footer {
             background-color: #343a40;
         }
@@ -96,7 +92,7 @@
             }
             .navbar-nav .nav-item:last-child {
                 margin-right: 0; /* Remove extra margin from the last item */
-    }
+            }
             #navbarNav {
                 display: flex;
                 justify-content: space-between; /* This will spread nav items and button apart */
@@ -107,6 +103,58 @@
                 justify-content: center; /* Keeps nav items centered in the available space */
             }
         }
+
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%; /* Ensures all cards in the same row are of equal height */
+        }
+
+        .card-img-top {
+            width: 100%; /* Ensure the image takes up all available width */
+            height: 200px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures images cover the area without distorting aspect ratio */
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .offer-tag {
+            background-color: #4caf50; /* Green background for offer tag */
+            color: white;
+            padding: 5px 10px; /* Adjust padding for a better fit */
+            margin-top: 10px;
+            margin-bottom: 10px; /* Added bottom margin for separation */
+            border-radius: 5px;
+            display: block; /* Ensures it takes the full width below the text */
+            text-align: center; /* Centers text within the tag */
+        }
+
+        .btn-primary {
+            width: 100%; /* Ensures button width is consistent */
+            border-radius: 5px; /* Rounded corners for the button */
+        }
+
+
+        @media (max-width: 768px) {
+            .card {
+                margin-bottom: 20px;
+            }
+            .card-img-top {
+                height: 250px; /* Slightly larger images on smaller screens */
+            }
+        }
+
+
 
     </style>
 </head>
@@ -153,6 +201,53 @@
         </div>
     </section>
 
+        <!-- Top Destination Packages of 2024 -->
+  <section class="top-destinations py-5" style="background-color: #e1f5fe;">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #0d47a1;">Top Destinations of 2024</h2>
+        <div class="row">
+            <!-- Week in Skardu -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="Skardu.jpg" class="card-img-top" alt="Skardu Valley">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Week in Skardu</h5>
+                        <p class="card-text"><i class="fas fa-star"></i> Top Pick | <i class="fas fa-wallet"></i> PKR 25,000 per head</p>
+                        <span class="offer-tag">Free cancellation up to 48 hrs</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Exploration of Hunza Valley -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="hunza.jpg" class="card-img-top" alt="Hunza Valley">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Exploration of Hunza Valley</h5>
+                        <p class="card-text"><i class="fas fa-star"></i> Must-See | <i class="fas fa-wallet"></i> PKR 22,000 per head</p>
+                        <span class="offer-tag">Includes guided tours of historical sites</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Gwadar Coastal Adventure -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="gwadar.jpg" class="card-img-top" alt="Gwadar Coast">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Gwadar Coastal Adventure</h5>
+                        <p class="card-text"><i class="fas fa-star"></i> Emerging Destination | <i class="fas fa-wallet"></i> PKR 18,000 per head</p>
+                        <span class="offer-tag">Water sports included</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary">Load More</a>
+        </div>
+    </div>
+</section>
 
     <!-- Why Choose PakTravels -->
     <section class="why-choose-us py-5">
@@ -179,49 +274,152 @@
     </section>
 
     <!-- Featured Packages -->
-    <section class="featured-packages py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Featured Travel Packages</h2>
-            <div class="row">
-                <!-- Example of a travel package card -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="travel (4).jpg" class="card-img-top" alt="Swat Kalam">
-                        <div class="card-body">
-                            <h5 the card-title">2 Day Tour To Galiat</h5>
-                            <p class="card-text">PKR 5000 per head | Couples PKR 8000</p>
-                            <a href="#" class="btn btn-primary w-100">Book Now</a>
-                        </div>
+<section class="featured-packages py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Featured Travel Packages</h2>
+        <div class="row">
+            <!-- Example Package 1: 2 Day Tour To Galiat -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="travel (4).jpg" class="card-img-top" alt="Galiat Tour">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">2 Day Tour To Galiat</h5>
+                        <p class="card-text"><i class="fas fa-wallet"></i> PKR 5,000 per head | Couples PKR 8,000</p>
+                        <span class="offer-tag">No Long Travel, Instant Sakoon!</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="travel (1).jpg" class="card-img-top" alt="Swat Kalam">
-                        <div class="card-body">
-                            <h5 class="card-title">3 Days Tour to Swat Kalam</h5>
-                            <p class="card-text">PKR 10,000 per head | Couples PKR 18,000</p>
-                            <a href="#" class="btn btn-primary w-100">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="travel (3).jpg" class="card-img-top" alt="Swat Kalam">
-                        <div class="card-body">
-                            <h5 the card-title">5 Days Tour to Kashmir</h5>
-                            <p class="card-text">PKR 15,000 per head | Couples PKR 25,000</p>
-                            <a href="#" class="btn btn-primary w-100">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more packages similarly -->
             </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary">Load More</a>
+            <!-- Example Package 2: 3 Days Tour to Swat Kalam -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="travel (1).jpg" class="card-img-top" alt="Swat Kalam">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">3 Days Tour to Swat Kalam</h5>
+                        <p class="card-text"><i class="fas fa-wallet"></i> PKR 10,000 per head | Couples PKR 18,000</p>
+                        <span class="offer-tag">Best for teenages and students!</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Example Package 3: 5 Days Tour to Kashmir -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="travel (3).jpg" class="card-img-top" alt="Kashmir Tour">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">5 Days Tour to Kashmir</h5>
+                        <p class="card-text"><i class="fas fa-wallet"></i> PKR 15,000 per head | Couples PKR 25,000</p>
+                        <span class="offer-tag">The Most Beautiful Place in Pakistan!</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional packages can be added similarly -->
+        </div>
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary">Load More</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Group Travel Packages -->
+<section class="group-travel-packages py-5" style="background-color: #f7f7f7;">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #205375;">Group Travel Packages</h2>
+        <div class="row">
+            <!-- Northern Area Light Chasing Tour -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="northern-lights.jpg" class="card-img-top" alt="Northern Lights Tour">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Northern Area Light Chasing Tour</h5>
+                        <p class="card-text"><i class="fas fa-users"></i> Group Size: 10-20 | <i class="fas fa-wallet"></i> PKR 20,000 per head</p>
+                        <span class="offer-tag">Free guided night tours</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Cultural Heritage Tour of Lahore -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="badshahi-mosque.jpg" class="card-img-top" alt="Lahore Cultural Tour">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Cultural Heritage Tour of Lahore</h5>
+                        <p class="card-text"><i class="fas fa-users"></i> Group Size: 10-20 | <i class="fas fa-wallet"></i> PKR 12,000 per head</p>
+                        <span class="offer-tag">10 Days of Cultural Exploration!</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="fairy-meadows.jpg" class="card-img-top" alt="Lahore Cultural Tour">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Beauty of the Fairy Meadows!</h5>
+                        <p class="card-text"><i class="fas fa-users"></i> Group Size: 10-20 | <i class="fas fa-wallet"></i> PKR 15,000 per head</p>
+                        <span class="offer-tag">10 Days of Exploration of Meadows!</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary">Load More</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Solo Traveler Packages -->
+   <section class="solo-traveler-packages py-5" style="background-color: #fff3e0;">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #ef6c00;">Solo Traveler Packages</h2>
+        <div class="row">
+            <!-- Hunza Adventure -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="hunza.jpg" class="card-img-top" alt="Hunza Adventure">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Hunza Adventure</h5>
+                        <p class="card-text"><i class="fas fa-user"></i> Solo Travel | <i class="fas fa-wallet"></i> PKR 30,000</p>
+                        <span class="offer-tag">Includes all meals and lodging</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Thar Desert Experience -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="thar-desert.jpg" class="card-img-top" alt="Thar Desert">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Thar Desert Experience</h5>
+                        <p class="card-text"><i class="fas fa-user"></i> Solo Travel | <i class="fas fa-wallet"></i> PKR 25,000</p>
+                        <span class="offer-tag">Camel safari and desert camp included</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Margalla Hills Retreat -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="marghalla-hills.jpg" class="card-img-top" alt="Margalla Hills">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Margalla Hills Retreat</h5>
+                        <p class="card-text"><i class="fas fa-user"></i> Solo Travel | <i class="fas fa-wallet"></i> PKR 18,000</p>
+                        <span class="offer-tag">Includes hiking and spa session</span>
+                        <a href="#" class="btn btn-primary mt-auto">Book Now</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary">Load More</a>
+        </div>
+    </div>
+</section>
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
