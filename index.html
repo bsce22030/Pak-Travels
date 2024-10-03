@@ -1,494 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>PakTravels - Explore Pakistan Securely</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
     <link rel="icon" href="logo-bg-free.png">
+</head>
+
+<body>
+
+    <!-- Carousel Section with Navbar Overlay -->
+    <div id="carouselExampleCaptions" class="carousel slide position-relative" data-bs-ride="carousel">
+
+        <!-- Navbar Section -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top w-100" id="mainNav"
+            style="z-index: 1000; background-color: rgba(0,0,0,0.5); transition: background-color 0.3s ease;">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">
+                    <img src="logo-bg-free.png" alt="logo" style="max-width: 40px;">
+                    PakTravels
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Destinations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Vacations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Services</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex flex-column flex-lg-row">
+                        <a href="#" class="btn btn-outline-light me-lg-2 mb-2 mb-lg-0"
+                            style="transition: all 0.3s;">Sign In</a>
+                        <a href="#" class="btn btn-primary" style="transition: all 0.3s;">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <script>
+            window.addEventListener('scroll', function () {
+                var navbar = document.getElementById('mainNav');
+                if (window.scrollY > 50) {
+                    navbar.style.backgroundColor = 'rgba(0,0,0,0.8)';
+                } else {
+                    navbar.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                }
+            });
+        </script>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2500">
+                <img src="Pictures/Carousel/1c.avif" class="d-block w-100" alt="..."
+                    style="filter: brightness(50%); object-fit: cover; height: 620px;">
+            </div>
+            <div class="carousel-item" data-bs-interval="2500">
+                <img src="Pictures/Carousel/2c.avif" class="d-block w-100" alt="..."
+                    style="filter: brightness(50%); object-fit: cover; height: 620px;">
+            </div>
+            <div class="carousel-item" data-bs-interval="2500">
+                <img src="Pictures/Carousel/3c.avif" class="d-block w-100" alt="..."
+                    style="filter: brightness(50%); object-fit: cover; height: 620px;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+        <div class="position-absolute start-50 translate-middle text-center w-100" style="top: 45%;">
+            <h1 class="text-white mb-3"
+                style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                Discover Pakistan's
+                Beauty</h1>
+            <p class="text-white mb-4 px-3"
+                style="font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 400; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); max-width: 800px; margin: 0 auto;">
+                Embark on an unforgettable journey through Pakistan's majestic landscapes and vibrant cultural tapestry
+            </p>
+        </div>
+
+        <!-- Download options -->
+        <div class="position-absolute start-50 translate-middle text-center w-100" style="top: 70%;">
+            <div class="d-flex justify-content-center">
+                <a href="#" class="me-3"
+                    onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200)">
+                    <img src="Pictures/Apps/Apple.png" alt="Download on the App Store" class="img-fluid"
+                        style="height: 60px; width: auto; object-fit: contain; transition: transform 0.2s;">
+                </a>
+                <a href="#"
+                    onclick="this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200)">
+                    <img src="Pictures/Apps/Google.png" alt="Get it on Google Play" class="img-fluid"
+                        style="height: 60px; width: auto; object-fit: contain; transition: transform 0.2s;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Packages Section -->
+    <div
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Pictures/Carousel/2c.avif'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh;">
+        <!-- Popular Packages -->
+        <div class="container-fluid p-0">
+            <div class="container position-relative py-3">
+                <h2 class="text-white text-start mb-4" style="margin-top: 50px; font-weight: 400;">Popular Tour
+                    Packages
+                </h2>
+            </div>
+        </div>
+        <div class="container-fluid p-0">
+            <div class="container position-relative py-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                    <!-- Card 1 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card1.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>AUTUMN TOUR TO SKARDU, DEOSAI PLAINS & KHAPLU</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs30,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card2.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>5 DAYS TRIP TO FAIRY MEADOWS AND NANGA PARBAT BASE CAMP</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs52,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card3.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>5 DAYS TRIP TO HUNZA VALLEY & KHUNJRAB PASS</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs44,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family Packages -->
+        <div class="container-fluid p-0">
+            <div class="container position-relative py-3">
+                <h2 class="text-white text-start mb-4" style="margin-top: 50px; font-weight: 400;">Family Packages
+                </h2>
+            </div>
+        </div>
+        <div class="container-fluid p-0">
+            <div class="container position-relative py-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                    <!-- Card 1 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card4.avif" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>7 DAYS FAMILY TRIP TO NARAN, HUNZA, NALTAR AND KHUNJERAB
+                                                PASS</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs154,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card5.avif" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>4 DAYS TRIP TO KUMRAT VALLEY AND KATORA LAKE</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs92,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card6.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>8 DAYS FAMILY TRIP TO SKARDU, DEOSAI PLAINS, SHIGAR VALLEY, AND
+                                                SHANGRILA LAKE</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs177,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+    <style>
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+
+
+    <!-- Why Choose Pak Travels Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Pak Travels</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="bi bi-globe text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Expert Local Guides</h5>
+                        <p>Our knowledgeable guides provide authentic insights into Pakistan's
+                            culture and history, ensuring an immersive experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="bi bi-shield-check text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Safety First</h5>
+                        <p>We prioritize your security with comprehensive safety measures
+                            throughout your journey, giving you peace of mind.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="bi bi-heart text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Unforgettable Experiences</h5>
+                        <p>Create lasting memories with our carefully curated and unique travel
+                            experiences that showcase the best of Pakistan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="bi bi-cash-coin text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Value for Money</h5>
+                        <p>Enjoy competitive prices without compromising on quality, ensuring you get the most out of
+                            your travel budget.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="bi bi-calendar-check text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Flexible Itineraries</h5>
+                        <p>Customize your trip with our flexible booking options to suit your preferences and schedule.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="bi bi-people text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Small Group Tours</h5>
+                        <p>Enjoy intimate group sizes for a more personalized and engaging travel experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-6">
+                    <div class="text-center">
+                        <i class="bi bi-house-heart text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Authentic Accommodations</h5>
+                        <p>Stay in carefully selected accommodations that reflect local culture and hospitality.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center">
+                        <i class="bi bi-headset text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>24/7 Support</h5>
+                        <p>Our dedicated support team is available round the clock to assist you throughout your
+                            journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Packages Section -->
+    <div
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Pictures/Carousel/3c.avif'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 200vh;">
+
+        <!-- Solo Packages -->
+        <div class="container-fluid p-0">
+            <div class="container position-relative py-3">
+                <h2 class="text-white text-start mb-4" style="margin-top: 50px; font-weight: 400;">Solo Packages</h2>
+            </div>
+        </div>
+        <div class="container-fluid p-0">
+            <div class="container position-relative py-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                    <!-- Card 1 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card7.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong> 3 DAYS TREKKING TRIP TO SPINKHOR LAKE KALAM</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs22,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card8.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong> TRIP TO HUNZA VALLEY & KHUNJRAB PASS</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs18,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card9.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>SOLO TRIP TO SWAT, KALAM & MAHODAND LAKE</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs33,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Couple Packages -->
+        <div class="container-fluid p-0">
+            <div class="container position-relative py-3">
+                <h2 class="text-white text-start mb-4" style="margin-top: 50px; font-weight: 400;">Couple Packages</h2>
+            </div>
+        </div>
+        <div class="container-fluid p-0">
+            <div class="container position-relative py-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                    <!-- Card 1 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card10.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>3 DAYS HONEYMOON TOUR TO SHOGRAN VALLEY</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs82,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card11.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>3 DAYS HONEYMOON TOUR TO SWAT, KALAM</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs65,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm mx-auto"
+                            style="border-radius: 0; overflow: hidden; transition: transform 0.3s ease; width: 100%; min-height: 420px; border: none;">
+                            <div style="height: 230px; overflow: hidden; margin: 0; padding: 0;">
+                                <img src="Pictures/Cards/card12.jpg" class="card-img-top" alt="Skardu Tour"
+                                    style="object-fit: cover; width: 100%; height: 100%; display: block; border: none; margin: 0; padding: 0;">
+                            </div>
+                            <div class="card-body p-3 d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start flex-grow-1"
+                                    style="margin-top: 15px;">
+                                    <div style="flex: 1; max-width: 60%;">
+                                        <h6 class="card-title fw-bold text-start mb-2">
+                                            <strong>8 DAYS TOUR TO SKARDU, SHANGRILA, KHAPLU AND SHIGAR
+                                                VALLEY</strong>
+                                        </h6>
+                                    </div>
+                                    <div class="text-end" style="flex: 0 0 auto;">
+                                        <span class="text-primary"
+                                            style="font-size: 1.1rem; font-weight: 800;">Rs142,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <style>
-        .hero-section {
-            background: url('hero.jpg') center/cover no-repeat;
-            color: white;
-            padding: 100px 15px;
-            position: relative;
-        }
-
-        .hero-section:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(81, 80, 80, 0.5); /* Dark overlay */
-            z-index: 1;
-        }
-
-        .hero-section h1 {
-            position: relative;
-            z-index: 2;
-            color: #FFFFFF;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-            font-size: 2.5rem; /* Adjust size as needed */
-        }
-
-        .search-form {
-            position: relative;
-            z-index: 2;
-        }
-
-        .search-form .form-control, .search-form .btn {
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        @media (max-width: 576px) 
-        {          
-            .search-form {
-                flex-direction: column; /* Stacks the form elements vertically on small screens */
-                align-items: center;
-            }
-            .search-form .form-control, .search-form .btn {
-                width: 100%; /* Full width for small devices */
-                margin-left: 0; /* Remove left margin if any */
-            }
-            .card-body {
-                padding: 15px; /* Adjust padding inside the card for mobile devices */
+        @media (max-width: 576px) {
+            .container {
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: -40px;
             }
 
-            .offer-tag {
-                margin-bottom: 5px; /* Reduce the bottom margin of the offer tag on mobile */
-            }
-
-            footer .row > div {
-                text-align: center; /* Center align the footer content on smaller screens */
-                margin-bottom: 10px; /* Add some space between the footer elements */
-            }
-
-            footer .row > div:last-child {
-                margin-bottom: 0; /* Remove the margin for the last element */
-            }
-        }
-
-        @media (min-width: 577px) 
-        {
-         footer .row > div 
-            {
-            text-align: left; /* Left align for non-small screens */
-            }
-         footer .row > div:last-child
-            {
-            text-align: right; /* Right align the last element */
-            }
-        }
-
-        .why-choose-us img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .why-choose-us h5 {
-            margin-top: 15px;
-            font-size: 18px;
-        }
-
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px 0;
-        }
-
-        footer h5 {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        footer p, footer a {
-            font-size: 16px;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .footer-icons a {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .footer-icons a:last-child {
-            margin-right: 0;
-        }
-
-
-        @media (min-width: 992px) { /* Adjust depending on when your navbar expands */
-            .navbar .container-fluid {
-                display: flex;
-                justify-content: space-between; /* Ensures the logo and nav items are on opposite ends */
-            }
-            .navbar-nav .nav-item {
-                margin-left: 30px; /* Increase spacing between nav items */
-                margin-right: 30px; /* Symmetrical spacing for aesthetic balance */
-            }
-            .navbar-nav .nav-item:first-child {
-                margin-left: 0; /* Remove extra margin from the first item */
-            }
-            .navbar-nav .nav-item:last-child {
-                margin-right: 0; /* Remove extra margin from the last item */
-            }
-            #navbarNav {
-                display: flex;
-                justify-content: space-between; /* This will spread nav items and button apart */
-                align-items: center; /* Keeps items vertically aligned */
-                width: 100%; /* Ensures the navbar collapse takes full width */
-            }
-            .navbar-nav {
-                justify-content: center; /* Keeps nav items centered in the available space */
-            }
-        }
-
-        .card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 100%; /* Ensures all cards in the same row are of equal height */
-        }
-
-        /* Ensure images in cards have consistent size */
-        .card-img-top {
-            width: 100%; /* Ensure the image takes up all available width */
-            height: 180px; /* Adjust height as needed */
-            object-fit: cover; /* Ensures images cover the area without distorting aspect ratio */
-        }
-
-        .card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .offer-tag {
-            background-color: #4caf50; /* Green background for offer tag */
-            color: white;
-            padding: 5px 10px; /* Adjust padding for a better fit */
-            margin-top: 10px;
-            margin-bottom: 10px; /* Added bottom margin for separation */
-            border-radius: 5px;
-            display: block; /* Ensures it takes the full width below the text */
-            text-align: center; /* Centers text within the tag */
-        }
-
-        .btn-primary {
-            width: 100%; /* Ensures button width is consistent */
-            border-radius: 5px; /* Rounded corners for the button */
-        }
-
-
-        @media (max-width: 768px) {
             .card {
-                margin-bottom: 20px;
-            }
-            .card-img-top {
-                height: 250px; /* Slightly larger images on smaller screens */
+                width: 90% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
         }
-
-
-
     </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container-fluid d-flex justify-content-between"> <!-- Flex container for proper alignment -->
-            <a class="navbar-brand text-success" href="#">
-                <img src="logo-bg-free.png" alt="logo" style="max-width: 40px;">
-                PakTravels</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto"> <!-- Centered nav items -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Destinations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Vacations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                </ul>
-                <div class="ms-auto"> <!-- Button far right -->
-                    <a class="nav-link btn btn-primary text-white"  style="padding: 8px;"  href="#">Book Now</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
-    
-    
-    <!-- Hero Section -->
-    <section class="hero-section text-white text-center">
-        <div class="container">
-            <h1>Life's an adventure, Explore Pakistan with PakTravels!</h1>
-            <form class="search-form mt-4 d-flex justify-content-center">
-                <input type="text" class="form-control mx-2" placeholder="Choose destination">
-                <input type="date" class="form-control mx-2">
-                <input type="number" class="form-control mx-2" placeholder="Guests">
-                <button type="submit" class="btn btn-success">Search</button>
-            </form>
-        </div>
-    </section>
 
-        <!-- Top Destination Packages of 2024 -->
-  <section class="top-destinations py-5" style="background-color: #e1f5fe;">
-    <div class="container">
-        <h2 class="text-center mb-4" style="color: #0d47a1;">Top Destinations of 2024</h2>
-        <div class="row">
-            <!-- Week in Skardu -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="Skardu.jpg" class="card-img-top" alt="Skardu Valley">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Week in Skardu</h5>
-                        <p class="card-text"><i class="fas fa-star"></i> Top Pick | <i class="fas fa-wallet"></i> PKR 25,000 per head</p>
-                        <span class="offer-tag">Free cancellation up to 48 hrs</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Exploration of Hunza Valley -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="hunza.jpg" class="card-img-top" alt="Hunza Valley">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Exploration of Hunza Valley</h5>
-                        <p class="card-text"><i class="fas fa-star"></i> Must-See | <i class="fas fa-wallet"></i> PKR 22,000 per head</p>
-                        <span class="offer-tag">Includes guided tours of historical sites</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Gwadar Coastal Adventure -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="gwadar.jpg" class="card-img-top" alt="Gwadar Coast">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Gwadar Coastal Adventure</h5>
-                        <p class="card-text"><i class="fas fa-star"></i> Emerging Destination | <i class="fas fa-wallet"></i> PKR 18,000 per head</p>
-                        <span class="offer-tag">Water sports included</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-4">
-            <a href="#" class="btn btn-outline-primary">Load More</a>
-        </div>
-    </div>
-</section>
-
-    <!-- Why Choose PakTravels -->
-    <section class="why-choose-us py-5">
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Why Choose PakTravels?</h2>
             <div class="row">
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-shield-alt mb-3"></i>
-                    <h5>Safety & Security</h5>
-                    <p>Your safety is our priority, with verified agencies and secure payment options.</p>
+                <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                    <h5 class="fw-bold text-white">About Pak Travels</h5>
+                    <p class="text-white">
+                        Pak Travels is your gateway to exploring the breathtaking beauty of Pakistan. We offer curated
+                        tours and unforgettable experiences, ensuring you discover the rich culture, stunning
+                        landscapes, and warm hospitality of our country.
+                    </p>
                 </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-hiking mb-3"></i>
-                    <h5>Memorable Adventures</h5>
-                    <p>Experience the beauty of Pakistan with well-curated trips to top destinations.</p>
+                <div class="col-lg-6 col-md-6 offset-lg-1">
+                    <div class="row">
+                        <div class="col-sm-4 col-6 mb-3">
+                            <h6 class="fw-bold text-white">Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+                                <li><a href="#" class="text-white text-decoration-none">Tours</a></li>
+                                <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-6 mb-3">
+                            <h6 class="fw-bold text-white">Support</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                                <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                                <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 col-12 mb-3">
+                            <h6 class="fw-bold text-white">Contact</h6>
+                            <ul class="list-unstyled">
+                                <li class="text-white">Email: info@paktravels.com</li>
+                                <li class="text-white">Phone: +92 123 456 7890</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-headset mb-3"></i>
-                    <h5>24/7 Support</h5>
-                    <p>Our team is always here to help before, during, and after your trip.</p>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row align-items-center">
+                <div class="col-md-12 text-center mb-3 mb-md-0">
+                    <p class="mb-0 text-white">&copy; 2024 Pak Travels. All rights reserved.</p>
+                </div>
+                <div class="col-md-12 text-center mt-2">
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Featured Packages -->
-<section class="featured-packages py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-4">Featured Travel Packages</h2>
-        <div class="row">
-            <!-- Example Package 1: 2 Day Tour To Galiat -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="travel (4).jpg" class="card-img-top" alt="Galiat Tour">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">2 Day Tour To Galiat</h5>
-                        <p class="card-text"><i class="fas fa-wallet"></i> PKR 5,000 per head | Couples PKR 8,000</p>
-                        <span class="offer-tag">No Long Travel, Instant Sakoon!</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Example Package 2: 3 Days Tour to Swat Kalam -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="travel (1).jpg" class="card-img-top" alt="Swat Kalam">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">3 Days Tour to Swat Kalam</h5>
-                        <p class="card-text"><i class="fas fa-wallet"></i> PKR 10,000 per head | Couples PKR 18,000</p>
-                        <span class="offer-tag">Best for teenages and students!</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Example Package 3: 5 Days Tour to Kashmir -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="travel (3).jpg" class="card-img-top" alt="Kashmir Tour">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">5 Days Tour to Kashmir</h5>
-                        <p class="card-text"><i class="fas fa-wallet"></i> PKR 15,000 per head | Couples PKR 25,000</p>
-                        <span class="offer-tag">The Most Beautiful Place in Pakistan!</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Additional packages can be added similarly -->
-        </div>
-        <div class="text-center mt-4">
-            <a href="#" class="btn btn-outline-primary">Load More</a>
-        </div>
-    </div>
-</section>
+    </footer>
 
 
-    <!-- Group Travel Packages -->
-<section class="group-travel-packages py-5" style="background-color: #f7f7f7;">
-    <div class="container">
-        <h2 class="text-center mb-4" style="color: #205375;">Group Travel Packages</h2>
-        <div class="row">
-            <!-- Northern Area Light Chasing Tour -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="northern-lights.jpg" class="card-img-top" alt="Northern Lights Tour">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Northern Area Light Chasing Tour</h5>
-                        <p class="card-text"><i class="fas fa-users"></i> Group Size: 10-20 | <i class="fas fa-wallet"></i> PKR 20,000 per head</p>
-                        <span class="offer-tag">Free guided night tours</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Cultural Heritage Tour of Lahore -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="badshahi-mosque.jpg" class="card-img-top" alt="Lahore Cultural Tour">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Cultural Heritage Tour of Lahore</h5>
-                        <p class="card-text"><i class="fas fa-users"></i> Group Size: 10-20 | <i class="fas fa-wallet"></i> PKR 12,000 per head</p>
-                        <span class="offer-tag">10 Days of Cultural Exploration!</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="fairy-meadows.jpg" class="card-img-top" alt="Lahore Cultural Tour">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Beauty of the Fairy Meadows!</h5>
-                        <p class="card-text"><i class="fas fa-users"></i> Group Size: 10-20 | <i class="fas fa-wallet"></i> PKR 15,000 per head</p>
-                        <span class="offer-tag">10 Days of Exploration of Meadows!</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-        
-        </div>
-        <div class="text-center mt-4">
-            <a href="#" class="btn btn-outline-primary">Load More</a>
-        </div>
-    </div>
-</section>
-
-
-    <!-- Solo Traveler Packages -->
-<section class="solo-traveler-packages py-5" style="background-color: #fff3e0;">
-    <div class="container">
-        <h2 class="text-center mb-4" style="color: #ef6c00;">Solo Traveler Packages</h2>
-        <div class="row">
-            <!-- Hunza Adventure -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="hunza.jpg" class="card-img-top" alt="Hunza Adventure">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Hunza Adventure</h5>
-                        <p class="card-text"><i class="fas fa-user"></i> Solo Travel | <i class="fas fa-wallet"></i> PKR 30,000</p>
-                        <span class="offer-tag">Includes all meals and lodging</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Thar Desert Experience -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="thar-desert.jpg" class="card-img-top" alt="Thar Desert">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Thar Desert Experience</h5>
-                        <p class="card-text"><i class="fas fa-user"></i> Solo Travel | <i class="fas fa-wallet"></i> PKR 25,000</p>
-                        <span class="offer-tag">Camel safari and desert camp included</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Margalla Hills Retreat -->
-            <div class="col-md-4 col-sm-6 mb-3">
-                <div class="card h-100">
-                    <img src="marghalla-hills.jpg" class="card-img-top" alt="Margalla Hills">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Margalla Hills Retreat</h5>
-                        <p class="card-text"><i class="fas fa-user"></i> Solo Travel | <i class="fas fa-wallet"></i> PKR 18,000</p>
-                        <span class="offer-tag">Includes hiking and spa session</span>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-4">
-            <a href="#" class="btn btn-outline-primary">Load More</a>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-dark text-white py-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>Contact Us</h5>
-                <p>Email: info@paktravels.com</p>
-                <p>Phone: +92 345 9668442</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <h5>Follow Us</h5>
-                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-            </div>
-            <div class="col-md-4 text-md-end">
-                <p>© 2024 PakTravels. All Rights Reserved.</p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+
 </html>
