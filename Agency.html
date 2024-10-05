@@ -6,210 +6,421 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>PakTravels Agency</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
         rel="stylesheet">
-    <link rel="icon" href="logo-bg-free.png">
+    <title>Wanderlust Travel Agency</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('tropical-beach.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .services {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-item img {
+            transition: transform 0.3s ease;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .portfolio-overlay p {
+            color: #dddddd;
+            text-align: center;
+            padding: 0 15px;
+            font-size: 1rem;
+        }
+
+        .portfolio-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .testimonial {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .testimonial-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .testimonial-position {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .contact-form {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+
+        .map {
+            height: 300px;
+            width: 100%;
+            background-color: #e9ecef;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #adb5bd;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #adb5bd;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        .counters {
+            background-color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .counter-description {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top w-100" id="mainNav"
-        style="z-index: 1000; background-color: rgba(0,0,0,0.8); transition: background-color 0.3s ease;">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">
-                <img src="logo-bg-free.png" alt="logo" style="max-width: 40px;">
-                PakTravels Agency
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contact</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <a href="#" class="btn btn-outline-light me-2">Partner with Us</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero-section text-white text-center d-flex align-items-center justify-content-center"
-        style="background-image: url('Pictures/Carousel/1c.avif'); background-size: cover; background-position: center; height: 100vh;">
+    <!-- Sticky Header -->
+    <header class="bg-dark text-white py-3 sticky-top">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Become a PakTravels Partner</h1>
-            <p class="lead mb-5">Join our network of travel agencies and expand your business across Pakistan</p>
-            <a href="#" class="btn btn-primary btn-lg">Apply Now</a>
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="h3">Wanderlust Travel Agency</h1>
+                <nav>
+                    <a href="#services" class="text-white me-3">Services</a>
+                    <a href="#destinations" class="text-white me-3">Destinations</a>
+                    <a href="#testimonials" class="text-white me-3">Testimonials</a>
+                    <a href="#contact" class="text-white">Contact</a>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- Benefits Section -->
-    <section class="py-5 bg-light">
+    <!-- Hero Section -->
+    <section class="hero"
+        style="background-image: url('Pictures/Carousel/1c.avif'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>Discover Your Dream Destination</h1>
+            <p>Let us plan your perfect getaway</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <h2 class="text-center mb-5">Benefits of Partnering with Us</h2>
-            <div class="row g-4">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row text-center">
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="bi bi-graph-up text-primary mb-3" style="font-size: 2.5rem;"></i>
-                            <h5 class="card-title">Increased Revenue</h5>
-                            <p class="card-text">Access to a wider customer base and exclusive deals to boost your
-                                sales.</p>
-                        </div>
+                    <div class="card service-card p-4">
+                        <i class="bi bi-airplane-fill text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Flight Bookings</h5>
+                        <p>Find the best deals on flights worldwide.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="bi bi-tools text-primary mb-3" style="font-size: 2.5rem;"></i>
-                            <h5 class="card-title">Advanced Tools</h5>
-                            <p class="card-text">Utilize our cutting-edge booking system and marketing resources.</p>
-                        </div>
+                    <div class="card service-card p-4">
+                        <i class="bi bi-building-fill text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Hotel Reservations</h5>
+                        <p>Book luxurious accommodations at competitive prices.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="bi bi-people text-primary mb-3" style="font-size: 2.5rem;"></i>
-                            <h5 class="card-title">Support Network</h5>
-                            <p class="card-text">Join a community of travel professionals and access expert support.</p>
-                        </div>
+                    <div class="card service-card p-4">
+                        <i class="bi bi-map-fill text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5>Tour Packages</h5>
+                        <p>Curated experiences for unforgettable adventures.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="py-5">
+    <!-- Counters Section -->
+    <section class="counters">
         <div class="container">
-            <h2 class="text-center mb-5">How It Works</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="text-center">
-                        <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-3"
-                            style="width: 80px; height: 80px;">
-                            <h3 class="m-0">1</h3>
+                <div class="col-md-4">
+                    <div class="counter" data-target="500">0</div>
+                    <div class="counter-description">Happy Travelers</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="counter" data-target="50">0</div>
+                    <div class="counter-description">Destinations</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="counter" data-target="1000">0</div>
+                    <div class="counter-description">Trips Organized</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="portfolio">
+        <div class="container">
+            <h2 class="text-center mb-5">Popular Destinations</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="Pictures/Cards/card1.jpg" alt="Bali, Indonesia" class="img-fluid">
+                        <div class="portfolio-category">Beach Paradise</div>
+                        <div class="portfolio-overlay">
+                            <h3>Bali, Indonesia</h3>
+                            <p>Experience the perfect blend of culture and relaxation.</p>
+                            <a href="#" class="btn btn-outline-light mt-3">Explore Packages</a>
                         </div>
-                        <h5>Apply</h5>
-                        <p>Fill out our simple online application form.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="text-center">
-                        <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-3"
-                            style="width: 80px; height: 80px;">
-                            <h3 class="m-0">2</h3>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="Pictures/Cards/card2.jpg" alt="Paris, France" class="img-fluid">
+                        <div class="portfolio-category">City Break</div>
+                        <div class="portfolio-overlay">
+                            <h3>Paris, France</h3>
+                            <p>Discover the romance and charm of the City of Light.</p>
+                            <a href="#" class="btn btn-outline-light mt-3">Explore Packages</a>
                         </div>
-                        <h5>Get Approved</h5>
-                        <p>Our team will review your application and get in touch.</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="text-center">
-                        <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-3"
-                            style="width: 80px; height: 80px;">
-                            <h3 class="m-0">3</h3>
+                <div class="col-md-4">
+                    <div class="portfolio-item">
+                        <img src="Pictures/Cards/card3.jpg" alt="Machu Picchu, Peru" class="img-fluid">
+                        <div class="portfolio-category">Adventure</div>
+                        <div class="portfolio-overlay">
+                            <h3>Machu Picchu, Peru</h3>
+                            <p>Embark on a journey to the ancient Incan citadel.</p>
+                            <a href="#" class="btn btn-outline-light mt-3">Explore Packages</a>
                         </div>
-                        <h5>Start Selling</h5>
-                        <p>Access our platform and start growing your business.</p>
                     </div>
                 </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary btn-lg">View All Destinations</a>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-5 bg-light">
+    <section id="testimonials" class="testimonial">
         <div class="container">
-            <h2 class="text-center mb-5">What Our Partners Say</h2>
+            <h2 class="text-center mb-5">What Our Travelers Say</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">"Partnering with PakTravels has been a game-changer for our agency. The
-                                support and resources they provide are unmatched."</p>
-                            <p class="font-weight-bold mb-0">- Sarah Khan, Islamabad Travel</p>
-                        </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Wanderlust Travel Agency made our honeymoon absolutely perfect.
+                            Their attention to detail and personalized service exceeded our expectations!"</p>
+                        <p class="testimonial-author">Emily & James</p>
+                        <p class="testimonial-position">Honeymooners to Maldives</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">"We've seen a significant increase in bookings since joining the
-                                PakTravels network. Their platform is user-friendly and efficient."</p>
-                            <p class="font-weight-bold mb-0">- Ali Raza, Karachi Adventures</p>
-                        </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Our family trip to Disney World was seamlessly organized by
+                            Wanderlust. They thought of everything, making it stress-free and magical for all of us!"
+                        </p>
+                        <p class="testimonial-author">The Johnson Family</p>
+                        <p class="testimonial-position">Family Vacation to Orlando</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <p class="card-text">"The training and ongoing support from PakTravels have helped us
-                                improve our services and grow our customer base."</p>
-                            <p class="font-weight-bold mb-0">- Amina Malik, Lahore Explorers</p>
-                        </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"As a solo traveler, I felt safe and well-taken care of throughout
+                            my European adventure. Wanderlust's itinerary was perfect!"</p>
+                        <p class="testimonial-author">Sarah Lee</p>
+                        <p class="testimonial-position">Solo Traveler to Europe</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="py-5 bg-primary text-white text-center">
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-form">
         <div class="container">
-            <h2 class="mb-4">Ready to Grow Your Travel Agency?</h2>
-            <p class="lead mb-4">Join PakTravels today and take your business to new heights</p>
-            <a href="#" class="btn btn-light btn-lg">Apply Now</a>
+            <h2 class="text-center mb-5">Start Planning Your Trip</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="destination" class="form-label">Preferred Destination</label>
+                            <input type="text" class="form-control" id="destination" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Additional Details</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2201946840354!2d-73.98823492346994!3d40.75889083542877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1710349284716!5m2!1sen!2sus"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p class="text-center mt-3">Visit Our Office</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-3">About PakTravels Agency</h5>
-                    <p>Connecting travel agencies across Pakistan to provide exceptional experiences for travelers.</p>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Home</a></li>
-                        <li><a href="#" class="text-light">Services</a></li>
-                        <li><a href="#" class="text-light">About Us</a></li>
-                        <li><a href="#" class="text-light">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="mb-3">Contact Us</h5>
-                    <p>Email: partners@paktravels.com<br>Phone: +92 123 456 7890</p>
-                    <div class="mt-3">
-                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p>&copy; 2024 PakTravels Agency. All rights reserved.</p>
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Wanderlust Travel Agency. All rights reserved.</p>
+            <div>
+                <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
     </footer>
@@ -217,7 +428,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
+    <script>
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            counter.innerText = '0';
+            const updateCounter = () => {
+                const target = +counter.getAttribute('data-target');
+                const c = +counter.innerText;
+                const increment = target / 200;
+                if (c < target) {
+                    counter.innerText = `${Math.ceil(c + increment)}`;
+                    setTimeout(updateCounter, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCounter();
+        });
+    </script>
 </body>
 
 </html>
