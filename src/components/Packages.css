@@ -1,0 +1,18 @@
+/* src/components/Packages.css */
+.card:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: -40px;
+  }
+
+  .card {
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
